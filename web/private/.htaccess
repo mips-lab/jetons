@@ -1,0 +1,5 @@
+# AuthUserFile /chemin/vers/www/chemin/vers/.htpasswd
+# AuthGroupFile /dev/null
+# AuthName "Accès privé !"
+# AuthType Basic
+# require valid-user

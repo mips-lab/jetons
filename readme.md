@@ -3,7 +3,7 @@ Gestion des jetons
 
 **Ce projet regroupe les éléments mis en place dans le cadre de la génération de jetons.**
 
-Le code est écrit pour tourner aussi bien sur un serveur Linux que Windows; aussi bien sur serveur dédié mutualisé que dédié.
+Le code est écrit pour tourner sur un serveur dédié Linux ou Windows. Sur mutualisé ça doit pouvoir tourner mais sans garantie aucune !
 
 *Les fonctionnalités actuels sont* :  
 - script de génération de planches de jetons (partie "web/private/")
@@ -25,14 +25,18 @@ Pré-requis
 ----------
 - serveur http : mod_rewrite doit être activé
 - php : gd2.so (ou gd2.dll) activé
+- composer + un accès au shell du serveur
 
 Installation
 ------------
 Vérifier que les pré-requis sont remplis puis les fichiers du projet doivent être mis sur le serveur (via GIT, FTP, ...) et vous devrez modifier les valeurs présentes dans le répertoire "app/config.php".
 Installer les dépendances via Gomposer (https://getcomposer.org) en faisant : php composer.phar install
 en étant à la racine du projet.
-Par ailleurs le répertoire "web/private" par défaut est protégé par authentification HTTP via un .htaccess dont le login est "demo" et le mot de passe "demo", vous êtes invité à modifier ces valeurs.
 Une fois ceci fais, le projet est déjà fonctionnel cependant je vous invite si vous le pouvez à créer un sous-domaine pour le répertoire "web/public" et un sous-domaine pour le répertoire "web/private", à défaut essayez de faire pointer sur le répertoire "web/" ;)
+
+Le répertoire "web/private" devrait être protégé par authentification HTTP au minimum, des fichiers d'exemples sont fournis à la racine du répertoire, à votre charge de mettre à jour avec les informations spécifiques à votre serveur (à savoir créer un login et mot de passe dans .htpasswd puis définir le path correct dans .htaccess et décommenter le tous).
+
+Ceux qui veulent tenter l'installation sur mutualisé, il vous faudra récupérer les fichiers (sur serveur local par exemple) de "vendor/" (donc installés via composer) et les mettres à disposition sur le FTP.
 
 Licence
 -------
