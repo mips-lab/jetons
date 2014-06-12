@@ -1,1 +1,5 @@
 /vendor/
+/web/public/check/
+/generated/*.csv
+/generated/qrcode/*.png
+/generated/serie/

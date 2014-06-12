@@ -8,8 +8,7 @@
 
         <h1>Série : {{ serie }} : informations</h1>
 
-        <p>Fonction actuellement indisponible</p>
-        {# if files|length > 0 %}
+        {% if files|length > 0 %}
         <p>
             Liste des fichiers
         </p>
@@ -23,7 +22,7 @@
         <p>
             Aucun fichier pour cette série (erreur ?)
         </p>
-        {% endif #}
+        {% endif %}
 
     </section>
 {% endblock %}

@@ -33,8 +33,10 @@ switch($strVarAction){
             die;
         }
 
-        // TODO : mettre à disposition le fichier dans un répertoire pour téléchargement ...
-        // sendFileHeader($pathToFile, filesize($pathToFile));
+        sendFileHeader($strVarFile, filesize($pathToFile));
+        echo file_get_contents($pathToFile);
+
+        die;
 
         break;
 

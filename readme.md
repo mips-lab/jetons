@@ -30,7 +30,7 @@ Pré-requis
 Installation
 ------------
 Vérifier que les pré-requis sont remplis puis les fichiers du projet doivent être mis sur le serveur (via GIT, FTP, ...) et vous devrez modifier les valeurs présentes dans le répertoire "app/config.php".
-Installer les dépendances via Gomposer (https://getcomposer.org) en faisant : php composer.phar install
+Installer les dépendances via Composer (https://getcomposer.org) en faisant : php composer.phar install
 en étant à la racine du projet.
 Une fois ceci fais, le projet est déjà fonctionnel cependant je vous invite si vous le pouvez à créer un sous-domaine pour le répertoire "web/public" et un sous-domaine pour le répertoire "web/private", à défaut essayez de faire pointer sur le répertoire "web/" ;)
 
