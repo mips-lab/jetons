@@ -1,0 +1,42 @@
+{% set page_type = 'check-index' %}
+{% set title = 'Vérification : accueil' %}
+
+{% extends 'layout-public.html.twig' %}
+
+{% block body %}
+    <section id="main" role="main">
+
+        <h1>Vérification</h1>
+
+        <p>
+            Un jeton à identifier ?
+        </p>
+
+        <form action="" method="POST">
+            <input type="hidden" name="action" value="check" />
+
+            <div class="box-form">
+
+                {% if error is defined %}<div class="error">{{ error }}</div>{% endif %}
+
+                <div class="fields">
+                    <div class="field-jeton-nombre">
+                        <div class="label">
+                            <label for="field-id">Identifiant du jeton</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="id" id="field-id" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit">
+                    <button type="submit">Vérifier le jeton</button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </section>
+{% endblock %}

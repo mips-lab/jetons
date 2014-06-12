@@ -1,0 +1,81 @@
+{% set page_type = 'jeton-create' %}
+{% set title = 'Jeton : création' %}
+
+{% extends 'layout-private.html.twig' %}
+
+{% block body %}
+    <section id="main" role="main">
+        <form action="" method="POST">
+            <input type="hidden" name="action" value="run" />
+
+            <div class="box-form">
+
+                {% if error['global'] is defined %}<div class="error">{{ error['global'] }}</div>{% endif %}
+
+                <div class="fields">
+                    <div class="field-jeton-nombre">
+                        <div class="label">
+                            <label for="field-jeton-nombre">Nombre de jetons à générer</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="jeton-nombre" placeholder="384" id="field-jeton-nombre" value="{%if var['jeton-nombre'] is defined %}{{ var['jeton-nombre'] }}{% endif %}" />
+                        </div>
+                        {% if error['field']['jeton-nombre'] is defined %}<div class="error">{{ error['field']['jeton-nombre'] }}</div>{% endif %}
+                    </div>
+                    <div class="field-jeton-value">
+                        <div class="label">
+                            <label for="field-jeton-value">Valeur des jetons</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="jeton-value" placeholder="1" id="field-jeton-value" value="{%if var['jeton-value'] is defined %}{{ var['jeton-value'] }}{% endif %}" />
+                        </div>
+                        {% if error['field']['jeton-value'] is defined %}<div class="error">{{ error['field']['jeton-value'] }}</div>{% endif %}
+                    </div>
+                    <div class="field-jeton-grid-width">
+                        <div class="label">
+                            <label for="field-jeton-grid-width">Largeur de la grille (mm)</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="jeton-grid-width" placeholder="600" id="field-jeton-grid-width" value="{%if var['jeton-grid-width'] is defined %}{{ var['jeton-grid-width'] }}{% endif %}" />
+                        </div>
+                        {% if error['field']['jeton-grid-width'] is defined %}<div class="error">{{ error['field']['jeton-grid-width'] }}</div>{% endif %}
+                    </div>
+                    <div class="field-jeton-grid-height">
+                        <div class="label">
+                            <label for="field-jeton-grid-height">Hauteur de la grille (mm)</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="jeton-grid-height" placeholder="400" id="field-jeton-grid-height" value="{%if var['jeton-grid-height'] is defined %}{{ var['jeton-grid-height'] }}{% endif %}" />
+                        </div>
+                        {% if error['field']['jeton-grid-height'] is defined %}<div class="error">{{ error['field']['jeton-grid-height'] }}</div>{% endif %}
+                    </div>
+                    <div class="field-jeton-size-width">
+                        <div class="label">
+                            <label for="field-jeton-size-width">Largeur du jeton (mm)</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="jeton-size-width" placeholder="25" id="field-jeton-size-width" value="{%if var['jeton-size-width'] is defined %}{{ var['jeton-size-width'] }}{% endif %}" />
+                        </div>
+                        {% if error['field']['jeton-size-width'] is defined %}<div class="error">{{ error['field']['jeton-size-width'] }}</div>{% endif %}
+                    </div>
+                    <div class="field-jeton-size-height">
+                        <div class="label">
+                            <label for="field-jeton-size-height">Hauteur du jeton (mm)</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="jeton-size-height" placeholder="25" id="field-jeton-size-height" value="{%if var['jeton-size-height'] is defined %}{{ var['jeton-size-height'] }}{% endif %}" />
+                        </div>
+                        {% if error['field']['jeton-size-height'] is defined %}<div class="error">{{ error['field']['jeton-size-height'] }}</div>{% endif %}
+                    </div>
+                </div>
+
+                <div class="submit">
+                    <button type="submit" name="submit" value="2">Simuler la création des jetons</button>&nbsp;
+                    <button type="submit" name="submit" value="1">Créer les jetons</button>
+                </div>
+
+            </div>
+
+        </form>
+    </section>
+{% endblock %}

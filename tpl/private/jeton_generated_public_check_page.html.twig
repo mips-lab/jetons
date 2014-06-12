@@ -1,0 +1,22 @@
+{% set page_type = 'check' %}
+{% set title = 'Jeton : vérification : ' ~ jeton['identifier'] ~ ' : OK' %}
+
+{% extends 'layout-public.html.twig' %}
+
+{% block body %}
+    <header>
+        <a href="{{ URL_MIPS }}" class="logo"><img src="_img/mips-logo.png" alt="" /></a>
+    </header>
+
+    <section id="main" role="main">
+        <p class="yes">Votre jeton est un vrai ! &#9786;</p>
+        <details>
+            <summary>Informations</summary>
+            <fieldset>
+                <p>Identifiant : {{ jeton['identifier'] }}</p>
+                <p>Valeur : {{ jeton['value'] }}</p>
+                <p>Créé le : {{ jeton['date_create']|date("m/d/Y") }}</p>
+            </fieldset>
+        </details>
+    </section>
+{% endblock %}

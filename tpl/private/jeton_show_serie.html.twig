@@ -1,0 +1,26 @@
+{% set page_type = 'jeton-create' %}
+{% set title = 'Jeton : choix d\'une série ' %}
+
+{% extends 'layout-private.html.twig' %}
+
+{% block body %}
+    <section id="main" role="main">
+
+        <h1>Série : informations</h1>
+
+        {% if series|length > 0 %}
+        <ul>
+            {% for aSerie in series %}
+            <li>
+                <a href="{{ CURRENT_URL }}?action=show&serie={{ aSerie }}">Série {{ aSerie }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>
+            Actuellement il n'y aucune série à afficher.
+        </p>
+        {% endif %}
+
+    </section>
+{% endblock %}

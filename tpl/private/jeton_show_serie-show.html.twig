@@ -1,0 +1,29 @@
+{% set page_type = 'jeton-create' %}
+{% set title = 'Jeton : Série : ' ~ serie %}
+
+{% extends 'layout-private.html.twig' %}
+
+{% block body %}
+    <section id="main" role="main">
+
+        <h1>Série : {{ serie }} : informations</h1>
+
+        <p>Fonction actuellement indisponible</p>
+        {# if files|length > 0 %}
+        <p>
+            Liste des fichiers
+        </p>
+
+        <ul>
+            {% for aFile in files %}
+        	<li><a href="{{ CURRENT_URL }}?action=dl&serie={{ serie }}&file={{ aFile }}" target="_blank">{{ aFile }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>
+            Aucun fichier pour cette série (erreur ?)
+        </p>
+        {% endif #}
+
+    </section>
+{% endblock %}

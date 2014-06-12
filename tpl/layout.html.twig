@@ -1,0 +1,28 @@
+{% spaceless %}
+
+{% set URL_type = URL_type|default('public') %}
+{% set URL_BASE = URL_type == 'public' ? URL_PROJECT_PUBLIC : URL_PROJECT_PRIVATE %}
+{% set page_type = page_type|default('') %}
+{% set title = title|default('') %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="fr"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="fr"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="fr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>{{ title }}</title>
+        <meta name="description" content="{{ title }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <base href="{{ URL_BASE }}">
+        <link rel="stylesheet" href="{{ URL_PROJECT_PUBLIC }}_css/common.css" type="text/css" media="all" />
+        {% block cssHeader %}{% endblock %}
+    </head>
+    <body data-url-type="{{ URL_type }}" data-page-type="{{ page_type }}">
+        {% block body %}{% endblock %}
+    </body>
+</html>
+{% endspaceless %}

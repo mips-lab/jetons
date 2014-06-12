@@ -1,0 +1,1 @@
+<img src="sfproxy.php?file=008_4.png" /><img src="sfproxy.php?file=008_6.png" /><img src="sfproxy.php?file=008_12.png" />

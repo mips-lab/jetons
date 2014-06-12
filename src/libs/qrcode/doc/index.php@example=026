@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style type="text/css">
+    html, body, div { margin: 0; border: 0 none; padding: 0; }
+    html, body, #wrapper, #left, #right { height: 100%; min-height: 100%; }
+    #wrapper { margin: 0 auto; oveflow: hidden; width: 960px;  }
+    #left { background: white; float: left; width: 260px; }
+    #right { background: white; margin-left: 260px;  }
+    #previewCnt { background: white; padding:1%; min-height: 300px;   }
+    #codeCnt {  background:white; padding:1%; min-height: 300px; }
+    .menu {  margin: 3%; background: white; border:1px solid silver; overflow:auto}
+    .preview { background: white;  min-height: 300px;border:1px solid silver; }
+    .codein { background: white;  min-height: 100%;border:1px solid silver; overflow:auto}
+    .header { padding: 5px 8px; border-bottom: 1px solid silver; background: #0b3175; color: white; font-family: Arial, Verdana, Helvetica; font-weight: bold;}
+    .subheader { padding: 2px 8px; border-bottom: 1px solid silver; background: gray; color: white; font-family: Arial, Verdana, Helvetica; font-weight: bold;font-size:8pt;}
+    .headernob {border-bottom: 0 }
+    .cnt { padding: 8px; }
+    .item { border-top: 1px solid silver; padding: 3px; font-size: 0.8em; font-family: "Arial Narrow", Arial, Verdana;}
+    .menu a { text-decoration: none; color: black; }
+    .menu a:visited { text-decoration: none; color: gray; }
+    .hi { background: #86c3ff;  }
+    a .hi { color: black !important; }
+    .filename { float: right; color: white; font-weight: normal;font-size:0.7em;}
+    .filename a {color: white; text-decoration: none;}
+    .filename a:visited {color: white;}
+    .cntsmaller { font-size:0.7em; }
+  </style>
+
+  <title>PHP QR Code - Examples</title>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="left">
+        <div class="menu">
+            <div class="header headernob">Examples Menu</div>
+                        <div class="subheader headernob">Standard API Basics - Quick Start</div>
+                        <a href="index.php?example=001"><div class="item"><b>001</b> PNG Output Browser</div></a>
+                        <a href="index.php?example=002"><div class="item"><b>002</b> Using outputed PNG</div></a>
+                        <a href="index.php?example=003"><div class="item"><b>003</b> Parametrised PNG generator...</div></a>
+                        <a href="index.php?example=004"><div class="item"><b>004</b> ... and how to use it</div></a>
+                        <a href="index.php?example=005"><div class="item"><b>005</b> PNG saved to file</div></a>
+                        <a href="index.php?example=006"><div class="item"><b>006</b> Configuring ECC level</div></a>
+                        <a href="index.php?example=007"><div class="item"><b>007</b> Configuring pixel size</div></a>
+                        <a href="index.php?example=008"><div class="item"><b>008</b> Configuring frame size</div></a>
+                        <a href="index.php?example=010"><div class="item"><b>010</b> Using merged lib version</div></a>
+                        <a href="index.php?example=020"><div class="item"><b>020</b> Content - Phone Number</div></a>
+                        <a href="index.php?example=021"><div class="item"><b>021</b> Content - SMS App</div></a>
+                        <a href="index.php?example=022"><div class="item"><b>022</b> Content - Email simple</div></a>
+                        <a href="index.php?example=023"><div class="item"><b>023</b> Content - Email extended</div></a>
+                        <a href="index.php?example=024"><div class="item"><b>024</b> Content - Skype call</div></a>
+                        <a href="index.php?example=025"><div class="item"><b>025</b> Content - Business Card, simple</div></a>
+                        <a href="index.php?example=026"><div class="item hi "><b>026</b> Content - Business Card, detailed</div></a>
+                        <a href="index.php?example=027"><div class="item"><b>027</b> Content - Business Card, photo</div></a>
+                                    <div class="subheader headernob">Plugins API Basics - Quick Start</div>
+                        <a href="index.php?example=100"><div class="item"><b>100</b> --- ToDo ---</div></a>
+                                    <div class="subheader headernob">Standard API - Vector Graphics</div>
+                        <a href="index.php?example=201"><div class="item"><b>201</b> SVG basic output</div></a>
+                        <a href="index.php?example=202"><div class="item"><b>202</b> SVG confguring output</div></a>
+                        <a href="index.php?example=203"><div class="item"><b>203</b> SVG save to file</div></a>
+                        <a href="index.php?example=204"><div class="item"><b>204</b> Compressed SVGZ save support</div></a>
+                        <a href="index.php?example=211"><div class="item"><b>211</b> CANVAS basic</div></a>
+                        <a href="index.php?example=212"><div class="item"><b>212</b> CANVAS rendered on custom tag</div></a>
+                                    <div class="subheader headernob">Plugins API - Vector Graphics</div>
+                        <a href="index.php?example=300"><div class="item"><b>300</b> --- ToDo ---</div></a>
+                                    <div class="subheader headernob">Standard API - Debug &amp; Custom Dev</div>
+                        <a href="index.php?example=701"><div class="item"><b>701</b> Text output</div></a>
+                        <a href="index.php?example=702"><div class="item"><b>702</b> Text output - ASCII ART</div></a>
+                        <a href="index.php?example=703"><div class="item"><b>703</b> Raw Code output</div></a>
+                        <a href="index.php?example=704"><div class="item"><b>704</b> Raw Code debug</div></a>
+                        <a href="index.php?example=711"><div class="item"><b>711</b> Custom GD2 JPEG renderer</div></a>
+                        <a href="index.php?example=712"><div class="item"><b>712</b> Custom GD2 debug renderer</div></a>
+                        <a href="index.php?example=721"><div class="item"><b>721</b> Vector debug - areas</div></a>
+                        <a href="index.php?example=722"><div class="item"><b>722</b> Vector debug - edges</div></a>
+                        <a href="index.php?example=723"><div class="item"><b>723</b> Vector debug - paths renderer</div></a>
+                                    <div class="subheader headernob">Plugins API - Debug &amp; Custom Dev</div>
+                        <a href="index.php?example=800"><div class="item"><b>800</b> --- ToDo ---</div></a>
+                                </div>
+        <br />
+    </div>
+
+    <div id="right">
+        <div id="previewCnt">
+            <div class="preview">
+                <div class="header">Result</div>
+                <iframe style="border:0; background:#e8f7ff;width:100%;height:300px" src="example_026_content_business_card_detailed.php"></iframe>
+            </div>
+        </div>
+        <div id="codeCnt">
+            <div class="codein">
+                <div class="header">Sourcecode <div class="filename"><a href="example_026_content_business_card_detailed.php">example_026_content_business_card_detailed.php</a></div></div>
+                <div class="cnt cntsmaller" style="overflow:auto;white-space:nowrap;"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">include(</span><span style="color: #DD0000">'../lib/full/qrlib.php'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;include(</span><span style="color: #DD0000">'config.php'</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;how&nbsp;to&nbsp;build&nbsp;raw&nbsp;content&nbsp;-&nbsp;QRCode&nbsp;with&nbsp;detailed&nbsp;Business&nbsp;Card&nbsp;(VCard)<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tempDir&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">EXAMPLE_TMP_SERVERPATH</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;here&nbsp;our&nbsp;data<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'John&nbsp;Doe'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$sortName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Doe;John'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$phone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'(049)012-345-678'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$phonePrivate&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'(049)012-345-987'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$phoneCell&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'(049)888-123-123'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$orgName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'My&nbsp;Company&nbsp;Inc.'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'john.doe@example.com'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;if&nbsp;not&nbsp;used&nbsp;-&nbsp;leave&nbsp;blank!<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$addressLabel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Our&nbsp;Office'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$addressPobox&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$addressExt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Suite&nbsp;123'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$addressStreet&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'7th&nbsp;Avenue'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$addressTown&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'New&nbsp;York'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$addressRegion&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'NY'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$addressPostCode&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'91921-1234'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$addressCountry&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'USA'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;we&nbsp;building&nbsp;raw&nbsp;data<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$codeContents&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'BEGIN:VCARD'</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$codeContents&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'VERSION:2.1'</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$codeContents&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'N:'</span><span style="color: #007700">.</span><span style="color: #0000BB">$sortName</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$codeContents&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'FN:'</span><span style="color: #007700">.</span><span style="color: #0000BB">$name</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$codeContents&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'ORG:'</span><span style="color: #007700">.</span><span style="color: #0000BB">$orgName</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$codeContents&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'TEL;WORK;VOICE:'</span><span style="color: #007700">.</span><span style="color: #0000BB">$phone</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$codeContents&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'TEL;HOME;VOICE:'</span><span style="color: #007700">.</span><span style="color: #0000BB">$phonePrivate</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$codeContents&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'TEL;TYPE=cell:'</span><span style="color: #007700">.</span><span style="color: #0000BB">$phoneCell</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$codeContents&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'ADR;TYPE=work;'</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'LABEL="'</span><span style="color: #007700">.</span><span style="color: #0000BB">$addressLabel</span><span style="color: #007700">.</span><span style="color: #DD0000">'":'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.</span><span style="color: #0000BB">$addressPobox</span><span style="color: #007700">.</span><span style="color: #DD0000">';'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.</span><span style="color: #0000BB">$addressExt</span><span style="color: #007700">.</span><span style="color: #DD0000">';'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.</span><span style="color: #0000BB">$addressStreet</span><span style="color: #007700">.</span><span style="color: #DD0000">';'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.</span><span style="color: #0000BB">$addressTown</span><span style="color: #007700">.</span><span style="color: #DD0000">';'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.</span><span style="color: #0000BB">$addressPostCode</span><span style="color: #007700">.</span><span style="color: #DD0000">';'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.</span><span style="color: #0000BB">$addressCountry<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$codeContents&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'EMAIL:'</span><span style="color: #007700">.</span><span style="color: #0000BB">$email</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$codeContents&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'END:VCARD'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;generating<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">QRcode</span><span style="color: #007700">::</span><span style="color: #0000BB">png</span><span style="color: #007700">(</span><span style="color: #0000BB">$codeContents</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$tempDir</span><span style="color: #007700">.</span><span style="color: #DD0000">'026.png'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">QR_ECLEVEL_L</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;displaying<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;img&nbsp;src="'</span><span style="color: #007700">.</span><span style="color: #0000BB">EXAMPLE_TMP_URLRELPATH</span><span style="color: #007700">.</span><span style="color: #DD0000">'026.png"&nbsp;/&gt;'</span><span style="color: #007700">;<br /></span>
+</span>
+</code></div>
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

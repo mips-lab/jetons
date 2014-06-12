@@ -1,0 +1,18 @@
+{% set page_type = 'check' %}
+{% set title = 'Jeton : vérification : ' ~ identifier ~ ' : KO' %}
+
+{% extends 'layout-public.html.twig' %}
+
+{% block body %}
+    <header>
+        <a href="{{ URL_MIPS }}" class="logo"><img src="_img/mips-logo.png" alt="" /></a>
+    </header>
+
+    <section id="main" role="main">
+        <p class="no">Votre jeton est un faux ! &#9785;</p>
+
+        <p>
+            Vous vous êtes fais flouer, tromper, filouter, abuser, berner, déposséder, duper, entôler, escroquer, truander, voler, jobarder, couilloner, dindonner, embobiner, pigeonner ... bref c'est une contre-façon !
+        </p>
+    </section>
+{% endblock %}

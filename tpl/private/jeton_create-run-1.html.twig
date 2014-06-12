@@ -1,0 +1,64 @@
+{% set page_type = 'jeton-create' %}
+{% set title = 'Jeton : création : simulation' %}
+
+{% extends 'layout-private.html.twig' %}
+
+{% block body %}
+    <section id="main" role="main">
+        <form action="" method="POST">
+            <input type="hidden" name="action" value="run-1" />
+
+            <div class="box-form">
+
+                {# {{ dump() }} #}
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Nombre de planchés créés</td>
+                            <td>{{ jeton['info-planche-nombre'] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Colonne par planche</td>
+                            <td>{{ jeton['info-grille-nombre-colonne'] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Ligne par planche</td>
+                            <td>{{ jeton['info-grille-nombre-ligne'] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Jetons à créer</td>
+                            <td>{{ jeton['info-nombre-genere'] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Surface de grille</td>
+                            <td>{{ jeton['info-grille-largeur'] }}*{{ jeton['info-grille-hauteur'] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Dimension par coupon</td>
+                            <td>{{ jeton['info-largeur'] }}*{{ jeton['info-hauteur'] }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    <strong>Avez vous assez de planches ?</strong><br />
+                    <strong>Est-ce que les informations spécifiés ci-dessus correspondent à ce que vous souhaitez ?</strong><br />
+                    <strong>Les fichiers générés vous conviennent-ils ?</strong>
+                </p>
+
+                <hr />
+
+                <p>
+                    Si à une seule de ces questions vous avez répondu 'NON' alors cliquez sur 'NON' :)
+                </p>
+
+                <div class="submit">
+                    <button type="submit" name="submit" value="2">Non, je recommence</button>&nbsp;
+                    <button type="submit" name="submit" value="1">Oui ça m'va, envoi le bousin !</button>
+                </div>
+
+            </div>
+
+        </form>
+    </section>
+{% endblock %}

@@ -1,0 +1,1 @@
+<img src="sfproxy.php?file=723_path_debug.png" />

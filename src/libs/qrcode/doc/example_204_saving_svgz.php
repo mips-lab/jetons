@@ -1,0 +1,1 @@
+<b>Raw SVG size:</b> 1321 B <br/><b>Compressed SVGZ size:</b> 558 B <br/><b>Saved:</b>: 57.791%<br/><br/>Notice: your server need to be configured for SVGZ output - look into sfproxy.php<br/><iframe src="sfproxy.php?file=204_demo.svgz" style="width:98%;height:160px"></iframe>

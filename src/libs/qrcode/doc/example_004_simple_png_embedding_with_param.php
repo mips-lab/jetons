@@ -1,0 +1,1 @@
+<img src="example_003_simple_png_output_param.php?id=1234" />

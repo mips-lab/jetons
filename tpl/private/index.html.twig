@@ -1,0 +1,21 @@
+{% set page_type = 'jeton-create' %}
+{% set title = 'Accueil' %}
+
+{% extends 'layout-private.html.twig' %}
+
+{% block body %}
+    <section id="main" role="main">
+
+        <h1>Accueil</h1>
+
+        <p>
+            Que souhaitez vous faire ?
+        </p>
+
+        <ul>
+        	<li><a href="{{ URL_PROJECT_PRIVATE }}jeton_create.php">Créer une série de jetons</a></li>
+        	<li><a href="{{ URL_PROJECT_PRIVATE }}jeton_show_serie.php">Voir les séries de jetons</a></li>
+        </ul>
+
+    </section>
+{% endblock %}

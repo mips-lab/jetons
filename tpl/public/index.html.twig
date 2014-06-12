@@ -1,0 +1,20 @@
+{% set page_type = 'check-index' %}
+{% set title = 'Publique : accueil' %}
+
+{% extends 'layout-public.html.twig' %}
+
+{% block body %}
+    <section id="main" role="main">
+
+        <h1>Accueil</h1>
+
+        <p>
+            Que souhaitez vous faire ?
+        </p>
+
+        <ul>
+        	<li><a href="{{ URL_PROJECT_PUBLIC }}check/">Vérifier un jeton</a></li>
+        </ul>
+
+    </section>
+{% endblock %}
