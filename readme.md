@@ -24,8 +24,10 @@ Projet créé par Yves ASTIER dans le cadre de l'association Paulla.
 Pré-requis
 ----------
 - serveur http : mod_rewrite doit être activé
-- php : gd2.so (ou gd2.dll) activé
+- php : les extensions suivantes -> gd, filter, phar, openssl, hash, ctype, zlib
 - composer + un accès au shell du serveur
+
+La plupart des extensions sont nativement embarqués dans PHP cependant dans le cas de certaines distributions (FreeBSD), il peut être nécessaire de recompiler PHP pour les ajouter. Certaines extensions ne sont pas nécessaires si vous prévoyez de ne pas utiliser "composer" (cf. ci-dessous).
 
 Installation
 ------------
@@ -34,12 +36,12 @@ Installer les dépendances via Composer (https://getcomposer.org) en faisant : p
 en étant à la racine du projet.
 Une fois ceci fais, le projet est déjà fonctionnel cependant je vous invite si vous le pouvez à créer un sous-domaine pour le répertoire "web/public" et un sous-domaine pour le répertoire "web/private", à défaut essayez de faire pointer sur le répertoire "web/" ;)
 
-Le répertoire "web/private" devrait être protégé par authentification HTTP au minimum, des fichiers d'exemples sont fournis à la racine du répertoire, à votre charge de mettre à jour avec les informations spécifiques à votre serveur (à savoir créer un login et mot de passe dans .htpasswd puis définir le path correct dans .htaccess et décommenter le tous).
+Le répertoire "web/private" devrait être protégé par authentification HTTP au minimum, des fichiers d'exemples sont fournis à la racine du répertoire, à votre charge de mettre à jour avec les informations spécifiques à votre serveur (à savoir créer un login et mot de passe dans .htpasswd puis définir le path correct dans .htaccess et dé-commenter le tous).
 
-Ceux qui veulent tenter l'installation sur mutualisé, il vous faudra récupérer les fichiers (sur serveur local par exemple) de "vendor/" (donc installés via composer) et les mettres à disposition sur le FTP.
+Ceux qui veulent tenter l'installation sur mutualisé, il vous faudra récupérer les fichiers (sur serveur local par exemple) de "vendor/" (donc installés via composer) et les mettre à disposition sur le FTP.
 
 Licence
 -------
 Le présent code est distribué sous GPL v3 dont un guide rapide en Français est disponible à cette adresse : http://www.gnu.org/licenses/quick-guide-gplv3.fr.html
 et la version d'origine complète en Anglais à cette adresse : http://www.gnu.org/licenses/gpl.html ou http://www.gnu.org/licenses/gpl.txt
-En cas de litige, l'auteur étant Français, toute action mené devra être rendu sur le sol Français selon les dispositions règlementaires en cours au moment du recours. Par ailleurs, en cas de litige, la partie plaignante s'engage à trouver toute solution à l'amiable avant un éventuel recours autre.
+En cas de litige, l'auteur étant Français, toute action mené devra être rendu sur le sol Français selon les dispositions réglementaires en cours au moment du recours. Par ailleurs, en cas de litige, la partie plaignante s'engage à trouver toute solution à l'amiable avant un éventuel recours autre.

@@ -1,10 +1,10 @@
 <?php
 
 /**
-* Permet le création de répertoires de manière récursive
+* Permet le crÃ©ation de rÃ©pertoires de maniÃ¨re rÃ©cursive
 * @author Draeli
-* @param strinf $dir Chemin à créer
-* @param int $mode chmod du répertoire
+* @param strinf $dir Chemin Ã  crÃ©er
+* @param int $mode chmod du rÃ©pertoire
 * @return boolean
 */
 function createDir($dir, $mode = 0755)
@@ -15,8 +15,8 @@ function createDir($dir, $mode = 0755)
 }
 
 /**
-* Charge tout un fichier csv contenant la liste des coupons édités à ce jour
-* @return array La clé du tableau est également l'identifiant du Coupon
+* Charge tout un fichier csv contenant la liste des coupons Ã©ditÃ©s Ã  ce jour
+* @return array La clÃ© du tableau est Ã©galement l'identifiant du Coupon
 */
 function coupon_csv_load(){
     $csv = array();
@@ -38,29 +38,29 @@ function coupon_csv_load(){
 
 /**
 * Sauvegarde une liste de coupons
-* @param array $coupons Liste de coupons à charger
+* @param array $coupons Liste de coupons Ã  charger
 * @return none
 */
 function coupon_csv_save($coupons){
     $fileToSave = PATH_PROJECT_GENERATED . GENERATED_LIST_COUPON_CSV_NAME . '.csv';
 
-    // fais une copie de sauvegarde du précédent fichier
+    // fais une copie de sauvegarde du prÃ©cÃ©dent fichier
     if( file_exists($fileToSave) ){
         rename($fileToSave, substr($fileToSave,0, -4) . '_' . date('Y-m-d_H-i-s', time()) . '.csv');
     }
 
-    // Prépare le nouveau fichier
+    // PrÃ©pare le nouveau fichier
     $fopenCsv = fopen($fileToSave, 'wb');
     foreach($coupons as $aCoupon){
         fputcsv($fopenCsv, $aCoupon->save());
     }
 }
 
-/* Sauvegarde les coupons pour une série */
+/* Sauvegarde les coupons pour une sÃ©rie */
 function coupon_serie_csv_save($coupons, $numSerie){
     $fileToSave = pathToSerie($numSerie) . GENERATED_LIST_COUPON_CSV_NAME . '.csv';
 
-    // Prépare le nouveau fichier
+    // PrÃ©pare le nouveau fichier
     $fopenCsv = fopen($fileToSave, 'wb');
     foreach($coupons as $aCoupon){
         fputcsv($fopenCsv, $aCoupon->save());
@@ -68,8 +68,8 @@ function coupon_serie_csv_save($coupons, $numSerie){
 }
 
 /**
-* Permet de créer un répertoire pour chaque "série" de coupon généré
-* @param $numSerie Numéro de série du coupon pour lequel on souhaite un répertoire
+* Permet de crÃ©er un rÃ©pertoire pour chaque "sÃ©rie" de coupon gÃ©nÃ©rÃ©
+* @param $numSerie NumÃ©ro de sÃ©rie du coupon pour lequel on souhaite un rÃ©pertoire
 */
 function createDirSerie($numSerie){
     createDir(pathToSerie($numSerie));
@@ -84,8 +84,8 @@ function createListSerie(){
 
     $numSerie = 0;
     $series = array(
-        'series' => array(), // Numéro de série en clé et en valeur un autre tableau qui contient en clé l'identifiant de coupon (fais pour des raisons de performance si on doit faire des recherches)
-        'coupons' => array(), // Liste des coupons avec en clé l'identifiant du coupon et en valeur le numéro de série
+        'series' => array(), // NumÃ©ro de sÃ©rie en clÃ© et en valeur un autre tableau qui contient en clÃ© l'identifiant de coupon (fais pour des raisons de performance si on doit faire des recherches)
+        'coupons' => array(), // Liste des coupons avec en clÃ© l'identifiant du coupon et en valeur le numÃ©ro de sÃ©rie
     );
     foreach($coupons as $aCoupon){
         $idIdentifier = $aCoupon->getIdIdentifier();
@@ -107,7 +107,7 @@ function createListSerie(){
     return $series;
 }
 
-/* Génère une couleur à partir d'un nombre */
+/* GÃ©nÃ¨re une couleur Ã  partir d'un nombre */
 function getColor($num) {
     $hash = md5('color' . $num);
     return 
@@ -117,19 +117,19 @@ function getColor($num) {
     ;
 }
 
-/* Pour avoir réellement tous l'espace de la page pour travailler dessus ! */
+/* Pour avoir rÃ©ellement tous l'espace de la page pour travailler dessus ! */
 function fpdfReset($objFpdf){
     $objFpdf->SetMargins(0, 0, 0);
-    $objFpdf->SetAutoPageBreak(false); // Pour éviter les sauts de page de type "jefaiscequejeveuxetjetemmerde"
+    $objFpdf->SetAutoPageBreak(false); // Pour Ã©viter les sauts de page de type "jefaiscequejeveuxetjetemmerde"
 }
 
 /**
-* Prend une chaîne en octet et la rend humainement lisible
+* Prend une chaÃ®ne en octet et la rend humainement lisible
 *
 * @author Draeli
-* @param int $size Taille en octet à convertir
-* @param int $arrondi Facultaif (Défaut : 0) Nombre de chiffre à afficher après la virgule
-* @return string Renvoi une chaîne formaté pour être lisible humainement
+* @param int $size Taille en octet Ã  convertir
+* @param int $arrondi Facultaif (DÃ©faut : 0) Nombre de chiffre Ã  afficher aprÃ¨s la virgule
+* @return string Renvoi une chaÃ®ne formatÃ© pour Ãªtre lisible humainement
 */
 function getBytesToHuman($size, $arrondi = 0){
     $count = 0;
@@ -144,7 +144,7 @@ function getBytesToHuman($size, $arrondi = 0){
 }
 
 /**
-* Empêche l'interprétation de tout html à l'affichage
+* EmpÃªche l'interprÃ©tation de tout html Ã  l'affichage
 * @param string $text
 * @return string
 */
@@ -157,13 +157,13 @@ function html_protect($text){
 }
 
 /**
-* Vérifie si un nombre appartient à un intervalle donné et renvoie la valeur la plus proche dans l'intervalle valide
-* Attention : ce comportement peut être modifié grâce au paramètre $options
+* VÃ©rifie si un nombre appartient Ã  un intervalle donnÃ© et renvoie la valeur la plus proche dans l'intervalle valide
+* Attention : ce comportement peut Ãªtre modifiÃ© grÃ¢ce au paramÃ¨tre $options
 * @param int, float, double $val
 * @param int, float, double, null $min
 * @param int, float, double, null $max
 * @param array $options
-* 	- (mixed) 'force_default' : Si une valeur est en dehors des intervales (donc infèrieur à min et supèrieur à max), alors on force la valeur
+* 	- (mixed) 'force_default' : Si une valeur est en dehors des intervales (donc infÃ¨rieur Ã  min et supÃ¨rieur Ã  max), alors on force la valeur
 * @return int, float, double
 */
 function check_interval($val, $min = null, $max = null, $options = array()){
@@ -174,7 +174,7 @@ function check_interval($val, $min = null, $max = null, $options = array()){
 }
 
 /**
-* Fourni les en-têtes nécessaires à l'envoi forcé d'un fichier
+* Fourni les en-tÃªtes nÃ©cessaires Ã  l'envoi forcÃ© d'un fichier
 * @author Draeli
 */
 function sendFileHeader($strFileName, $intTotalSize){
@@ -185,18 +185,24 @@ function sendFileHeader($strFileName, $intTotalSize){
     header('Cache-Control: must-revalidate, pre-check=0, post-check=0, max-age=0');
     header('Last-Modified: '.gmdate(DATE_RFC1123, time()));
 
-    // Info sur le contenu envoyé
+    // Info sur le contenu envoyÃ©
     header('Content-Tranfer-Encoding: none');
     header('Content-Length: ' . $intTotalSize);
     header('Content-Type: application/force-download; name="' . $strFileName . '"');
     header('Content-Disposition: attachment; filename="' . $strFileName . '"');
 
-    // Infos sur la réponse HTTP
+    // Infos sur la rÃ©ponse HTTP
     header('Date: ' . $strDate);
     header('Expires: ' . gmdate(DATE_RFC1123, time()+1));
 }
 
 function getCurrentUrl(){
     // http://php.net/manual/fr/reserved.variables.server.php
-    return 'http' . ( empty($_SERVER['HTTPS']) ? '' : 's' ) . '://' .  str_replace('//', '/', $_SERVER['HTTP_HOST'] . '/' .$_SERVER['PHP_SELF']);
+    $host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST'];
+    // ajoutÃ© pour des raisons de sÃ©curitÃ©
+    if( !preg_match('@^(?:[-A-Za-z0-9]+\.)+[A-Za-z]{2,6}$@', $host) ){
+        $host = '';
+    }
+
+    return 'http' . ( empty($_SERVER['HTTPS']) ? '' : 's' ) . '://' .  str_replace('//', '/', $host . '/' .$_SERVER['PHP_SELF']);
 }
