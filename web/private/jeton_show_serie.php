@@ -15,13 +15,13 @@ switch($strVarAction){
         // Numéro de série inexistant
         $pathToSerie = pathToSerie($strVarSerie);
         if( !file_exists($pathToSerie) ){
-            header('Location: ' . getCurrentUrl());
+            header('Location: ' . URL_PROJECT_PRIVATE . 'jeton_show_serie.php');
             die;
         }
 
         // Format de fichier incorrecte
         if( !preg_match('@^[a-z0-9_-]+\.pdf$@', $strVarFile) ){
-            header('Location: ' . getCurrentUrl());
+            header('Location: ' . URL_PROJECT_PRIVATE . 'jeton_show_serie.php');
             die;
         }
 
@@ -29,7 +29,7 @@ switch($strVarAction){
 
         // Fichier inexistant
         if( !file_exists($pathToFile) ){
-            header('Location: ' . getCurrentUrl());
+            header('Location: ' . URL_PROJECT_PRIVATE . 'jeton_show_serie.php');
             die;
         }
 
@@ -47,7 +47,7 @@ switch($strVarAction){
 
         $pathToSerie = pathToSerie($strVarSerie);
         if( !file_exists($pathToSerie) ){
-            header('Location: ' . getCurrentUrl());
+            header('Location: ' . URL_PROJECT_PRIVATE . 'jeton_show_serie.php');
             die;
         }
 

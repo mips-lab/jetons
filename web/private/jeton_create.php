@@ -29,7 +29,7 @@ switch($strVarAction){
         if( $strVarSubmit == 1 ){
             // Rien de spécial, on laisse suivre le programme sur le switch 'run'
         }else{
-            header('Location: ' . getCurrentUrl());
+            header('Location: ' . URL_PROJECT_PRIVATE . 'jeton_create.php');
             break;
         }
     case 'run':
@@ -390,7 +390,7 @@ switch($strVarAction){
 // TODO : ajouter la liste des fichiers créés pour la simulation et le résultat
             if( $modeWork == 0 ){
                 // echo $twig->render('@private/jeton_create-run-2.html.twig', $renderVariable);
-                header('Location: ' . getCurrentUrl());
+                header('Location: ' . URL_PROJECT_PRIVATE . 'jeton_create.php');
                 break;
             }
             elseif( $modeWork == 1 ){
