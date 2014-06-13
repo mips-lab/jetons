@@ -12,7 +12,8 @@
         <ul>
             {% for aSerie in series %}
             <li>
-                <a href="{{ CURRENT_URL }}?action=show&serie={{ aSerie }}">Série {{ aSerie }}</a>
+                <!--<a href="{{ CURRENT_URL }}?action=show&serie={{ aSerie }}">Série {{ aSerie }}</a>-->
+                <a href="{{ URL_PROJECT_PRIVATE }}jeton_show_serie.php?action=show&serie={{ aSerie }}">Série {{ aSerie }}</a>
             </li>
             {% endfor %}
         </ul>

@@ -15,7 +15,7 @@
 
         <ul>
             {% for aFile in files %}
-        	<li><a href="{{ CURRENT_URL }}?action=dl&serie={{ serie }}&file={{ aFile }}" target="_blank">{{ aFile }}</a></li>
+        	<li><!--<a href="{{ CURRENT_URL }}?action=dl&serie={{ serie }}&file={{ aFile }}" target="_blank">{{ aFile }}</a>--><a href="{{ URL_PROJECT_PRIVATE }}jeton_show_serie.php?action=dl&serie={{ serie }}&file={{ aFile }}" target="_blank">{{ aFile }}</a></li>
             {% endfor %}
         </ul>
         {% else %}
