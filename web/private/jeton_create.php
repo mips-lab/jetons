@@ -97,6 +97,24 @@ switch($strVarAction){
                 rVar::save('jeton-size-height');
             }
 
+            if( !isset($renderVariable['error']['field']['jeton-size-width'])  && $strVarSizeWidth > $strVarGridWidth ){
+                $renderVariable['error']['field']['jeton-size-width'] = 'La largeur de vos jetons ne peut pas excéder celui de la grille !';
+                unset($renderVariable['var']['jeton-size-width']);
+            }
+            else{
+                rVar::set('jeton-size-width', '');
+                rVar::save('jeton-size-width');
+            }
+
+            if( !isset($renderVariable['error']['field']['jeton-size-height'])  && $strVarSizeHeight > $strVarGridHeight ){
+                $renderVariable['error']['field']['jeton-size-height'] = 'La hauteur de vos jetons ne peut pas excéder celui de la grille !';
+                unset($renderVariable['var']['jeton-size-height']);
+            }
+            else{
+                rVar::set('jeton-size-height', '');
+                rVar::save('jeton-size-height');
+            }
+
             if( count($renderVariable['error']['field']) > 0 ){
                 throw new \Exception('Votre formulaire contient des erreurs');
             }
