@@ -23,7 +23,7 @@ Projet créé par Yves ASTIER dans le cadre de l'association Paulla.
 
 Pré-requis
 ----------
-- serveur http : mod_rewrite doit être activé
+- serveur http : mod_rewrite et mod_speling doit être activé
 - php : les extensions suivantes -> gd, filter, phar, openssl, hash, ctype, zlib
 - composer + un accès au shell du serveur
 
